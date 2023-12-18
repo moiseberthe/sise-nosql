@@ -20,11 +20,17 @@ pip install jupyter jupyterlab redis pymongo
 
 To run your jupyter notebook: `jupyter notebook` or `jupyter lab`
 
+### Build and run containers
+
+```bash
+docker compose up --build
+```
+
 ### Run Redis
 
 In a separate command line prompt:
 
-```
+```bash
 docker run -it --rm --name some-redis -p 6379:6379 redis
 ```
 
@@ -32,18 +38,14 @@ docker run -it --rm --name some-redis -p 6379:6379 redis
 
 In a separate command line prompt:
 
-```
-docker run -it --rm --name some-mongo -p 27017:27017 mongo:4
+```bash
+docker run -it --rm --name some-mongo -p 27018:27017 mongo:4
 ```
 
 ### Run OrientDB
 
 In a separate command line prompt:
 
-```
+```bash
 docker run -it --rm --name some-orientdb -p 2424:2424 -p 2480:2480 -e ORIENTDB_ROOT_PASSWORD=root orientdb:2.2
 ```
-
-## Contributions
-
-A huge thanks to Damien SIMONIN FEUGAS for a huge part of those NoSQL tutorials which were translated into Jupyter notebooks !

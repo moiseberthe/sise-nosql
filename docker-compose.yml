@@ -5,7 +5,7 @@ services:
         image: mongo:4
         container_name: some-mongo
         ports:
-        - 6379:6379
+        - 27018:27017
 
     redis:
         image: redis
@@ -16,8 +16,5 @@ services:
     orientdb:
         image: orientdb:2.2
         container_name: some-orientdb
-        build:
-            context: ./server
-            dockerfile: Dockerfile
         ports:
         - 2480:2480
