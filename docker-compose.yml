@@ -2,19 +2,26 @@ version: '3'
 
 services:
     mongo:
+        platform: linux/arm64
         image: mongo:4
         container_name: some-mongo
         ports:
         - 27018:27017
 
     redis:
+        platform: linux/arm64
         image: redis
         container_name: some-redis
         ports:
         - 6379:6379
     
     orientdb:
+        platform: linux/x86_64
         image: orientdb:2.2
         container_name: some-orientdb
         ports:
-        - 2480:2480
+            - 2424:2424
+            - 2480:2480
+        environment:
+            ORIENTDB_ROOT_PASSWORD: root
+        command: []
